@@ -1,0 +1,96 @@
+
+
+  <h1 mat-dialog-title>Editar Alumno</h1>
+  <h3 mat-dialog-title>ID Alumno: {{ data.idAlumno }}</h3>
+  <h3 mat-dialog-subtitle>Alumno: {{ data | unirnombreapellido }}</h3>
+  <div mat-dialog-content class="row">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Nombre"
+      [(ngModel)]="data.nombres"
+      name="nombres"
+      required
+      />
+      <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Apellido"
+      [(ngModel)]="data.apellidos"
+      name="apellidos"
+      required
+      />
+      <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Email"
+      [(ngModel)]="data.email"
+      name="email"
+      required
+      />
+      <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>DNI</mat-label>
+      <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="DNI"
+      [(ngModel)]="data.dni"
+      name="dni"
+      required
+      />
+      <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Domicilio</mat-label>
+      <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Domicilio"
+      [(ngModel)]="data.domicilio"
+      name="domicilio"
+      required
+      />
+      <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Telefono</mat-label>
+      <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Telefono"
+      [(ngModel)]="data.telefono"
+      name="telefono"
+      required
+      />
+      <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="d-flex justify-content-center">
+    <img width="200" height="100" src="https://c.tenor.com/NZu2K39fYmkAAAAC/the-office.gif" alt="">
+  </div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button color="warn" [mat-dialog-close]="data" cdkFocusInitial>
+    Modificar
+  </button>
+</div>
+

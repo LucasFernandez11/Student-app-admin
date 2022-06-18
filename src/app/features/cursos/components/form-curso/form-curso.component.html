@@ -1,0 +1,95 @@
+<mat-toolbar class="titulo bg-sombra text-white">
+  <div align="center" style="text-align: right" appTitulo>
+    Agregar nuevo curso
+  </div>
+</mat-toolbar>
+
+<mat-card-content>
+  <form class="bg bg-sombra" [formGroup]="formularioCurso" (ngSubmit)="GuardarCurso()">
+    <div fxLayout="row" fxFlexFill fxLayout.lt-md="column" fxLayoutGap="8px">
+      <mat-form-field fxFlex>
+        <mat-label class="text-white">Nombre del Curso</mat-label> 
+        <input class="text-white"
+          formControlName="curso"
+          matTooltip="Ingrese el nombre del curso"
+          matInput
+         
+          autocomplete="off"
+        />
+        <mat-error class="fs-5">
+          <span *ngIf="formularioCurso.get('curso')?.invalid" class="error"
+            >El Nombre es requerido
+          </span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field fxFlex>
+        <mat-label class="text-white">Descripción del Curso</mat-label> 
+        <input class="text-white"
+          formControlName="descripcion"
+          matTooltip="Ingrese la descripcion del curso"
+          matInput         
+          autocomplete="off"
+        />
+        <mat-error class="fs-5">
+          <span
+            *ngIf="formularioCurso.get('descripcion')?.invalid"
+            class="error"
+            >La Descripción es requerida
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexFill fxLayout.lt-md="column" fxLayoutGap="8px">
+      <mat-form-field fxFlex>
+        <mat-label class="text-white">Horas del Curso</mat-label> 
+        <input class="text-white"
+          formControlName="horas"
+          matTooltip="Ingrese las horas del curso"
+          matInput
+          autocomplete="off"
+        />
+        <mat-error class="fs-5">
+          <span *ngIf="formularioCurso.get('horas')?.invalid" class="error"
+            >Las horas del curso es requerida
+          </span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mt-3">
+      <button
+        type="submit"
+        mat-raised-button
+        color="accent"
+        matTooltip="Submit"
+        [disabled]="formularioCurso.invalid"
+      >
+        Agregar Curso</button
+      >&nbsp;&nbsp;&nbsp;&nbsp;
+      <button
+        type="reset"
+        mat-raised-button
+        color="accent"
+        matTooltip="Reset"
+        (click)="reiniciarFormulario()"
+      >
+        Reiniciar
+      </button>
+    </div>
+
+    <p
+      *ngIf="dataSaved"
+      style="
+        color: rgb(0, 128, 0);
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 2rem;
+      "
+      Class="success"
+      align="left"
+    >
+      El curso se agregó correctamente
+    </p>
+  </form>
+</mat-card-content>

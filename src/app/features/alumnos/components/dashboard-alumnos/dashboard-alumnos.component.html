@@ -1,0 +1,82 @@
+<div class="bg-sombra">
+  <div   *ngIf="authService.isAdmin">
+    <app-form></app-form>
+  </div>
+
+  <mat-toolbar  class="titulo text-white mt-4 bg-sombra">
+    <div align="center" style="text-align: right" appTitulo>
+      Lista de Alumnos
+    </div>
+  </mat-toolbar>
+
+  <table #myTable mat-table [dataSource]="datos$" class="mat-elevation-z8">
+    <ng-container matColumnDef="idAlumno">
+      <th class="fs-6 text-decoration-underline" mat-header-cell *matHeaderCellDef>IDAlumno</th>
+      <td mat-cell *matCellDef="let element">{{ element.idAlumno }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombres">
+      <th class="fs-6 text-decoration-underline" mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let element">{{ element.nombres }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="apellidos">
+      <th class="fs-6 text-decoration-underline" mat-header-cell *matHeaderCellDef>Apellido</th>
+      <td mat-cell *matCellDef="let element">{{ element.apellidos }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th class="fs-6 text-decoration-underline" mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dni">
+      <th class="fs-6 text-decoration-underline" mat-header-cell *matHeaderCellDef>dni</th>
+      <td mat-cell *matCellDef="let element">{{ element.dni }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="domicilio">
+      <th class="fs-6 text-decoration-underline" mat-header-cell *matHeaderCellDef>Domicilio</th>
+      <td mat-cell *matCellDef="let element">{{ element.domicilio }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="telefono">
+      <th class="fs-6 text-decoration-underline" mat-header-cell *matHeaderCellDef>Telefono</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.telefono }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th class="fs-6 text-decoration-underline" mat-header-cell *matHeaderCellDef>Acciones</th>
+      <mat-cell *matCellDef="let element">
+        
+        <a  class="pointer mx-3" matTooltip="Ver Detalle" (click)="openDialogVer(element)" [routerLink]="['ver/', element.idAlumno]" style="color: #18b031">
+          <mat-icon>search</mat-icon>
+        </a>
+        
+
+        <!--Botón Editar solo visible para el administrador-->
+        <a *ngIf="authService.isAdmin" class="pointer mx-3" (click)="openDialogEditar(element)"
+        [routerLink]="['editar/', element.idAlumno]" matTooltip="Editar Datos"
+              style="color: #1c89c9">
+              <mat-icon>edit</mat-icon>
+            </a>
+      
+
+        <!--Botón Eliminar solo visible para el administrador-->
+        <a *ngIf="authService.isAdmin" class="pointer mx-3" (click)="openDialogEliminar(element)"
+        [routerLink]="['eliminar/', element.idAlumno]"  matTooltip="Eliminar Alumno"
+        style="color: rgb(170, 24, 24)">
+        <mat-icon>delete</mat-icon>
+      </a>
+       
+      </mat-cell>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+
+<mat-divider></mat-divider>

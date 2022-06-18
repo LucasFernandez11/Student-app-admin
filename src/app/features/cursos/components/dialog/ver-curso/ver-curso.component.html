@@ -1,0 +1,93 @@
+<h1 mat-dialog-title>Ver Curso</h1>
+<h3 mat-dialog-title>ID Curso: {{ data.idCurso }}</h3>
+<div class="d-flex justify-content-center">
+  <img width="200" height="100" src="https://media3.giphy.com/media/cXblnKXr2BQOaYnTni/giphy.gif" alt="">
+</div>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Curso</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Curso"
+      [(ngModel)]="data.curso"
+      name="curso"
+      required
+      disabled
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Descripción</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Descripción"
+      [(ngModel)]="data.descripcion"
+      name="descripcion"
+      required
+      disabled
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Horas</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Horas"
+      [(ngModel)]="data.horas"
+      name="horas"
+      required
+      disabled
+    />
+  </mat-form-field>
+</div>
+
+<h1 mat-dialog-title>Tabla Alumnos inscriptos en el curso</h1>
+
+<table
+  mat-table
+  [dataSource]="datosFiltrados$"
+  class="mat-elevation-z8 full-width-min"
+>
+  <ng-container matColumnDef="idCurso">
+    <th mat-header-cell *matHeaderCellDef>ID Curso</th>
+    <td mat-cell *matCellDef="let element">{{ element.idCurso }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="idAlumno">
+    <th mat-header-cell *matHeaderCellDef>Apellidos y Nombres Alumno</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.idAlumno | convertirIdNombreAlumno | async }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+
+    <mat-cell *matCellDef="let element">
+      <button
+        *ngIf="authService.isAdmin"
+        mat-icon-button
+        aria-label="Icono Eliminar"
+        type="button"
+        mat-raised-button
+        color="accent"
+        matTooltip="Eliminar"
+        (click)="desinscribirAlumno(element.idAlumno, element.idCurso)"
+      >
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Volver atrás</button>
+</div>

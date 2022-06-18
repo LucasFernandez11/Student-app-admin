@@ -1,0 +1,36 @@
+.card-login {  
+  max-width: 350px;
+  background-color: #0d48a161 ; 
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0,178,255,1),
+  0 0 10px rgba(0,178,255,1),
+  0 0 20px rgba(0,178,255,1),
+  0 0 40px rgba(38,104,127,1),
+  0 0 80px rgba(38,104,127,1),
+  0 0 90px rgba(38,104,127,1),
+  0 0 100px rgba(38,104,127,1),
+  0 0 140px rgba(38,104,127,1),
+  0 0 180px rgba(38,104,127,1);  
+  text-align: center;  
+}
+/* .signin-content {
+  box-shadow: 30px 30px 30px rgba(23, 226, 145, 0.928);
+  padding: 0px 1rem;  
+} */
+.full-width-input {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+h2 {
+  margin: 20px 0 0 0;
+}
+h3 {
+  margin: 0px;
+}

@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Eliminar Usuario</h1>
+<h3 mat-dialog-title>¿Desea eliminar el Usuario {{ data.idUsuario }}?</h3>
+<img width="200" height="150" src="https://c.tenor.com/kWejy2kDcTwAAAAC/office.gif" alt="">
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button color="warn" [mat-dialog-close]="data" cdkFocusInitial>Eliminar</button>
+</div>

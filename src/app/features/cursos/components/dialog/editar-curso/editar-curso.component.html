@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>Editar Curso</h1>
+<h3 mat-dialog-title>ID Curso: {{ data.idCurso }}</h3>
+<div mat-dialog-content align="center">
+  <mat-form-field appearance="fill">
+    <mat-label>Curso</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Curso"
+      [(ngModel)]="data.curso"
+      name="curso"
+      required
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Descripción</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Descripción"
+      [(ngModel)]="data.descripcion"
+      name="descripcion"
+      required
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Horas</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Horas"
+      [(ngModel)]="data.horas"
+      name="horas"
+      required
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+</div>
+<div class="d-flex justify-content-center">
+  <img width="200" height="100" src="https://c.tenor.com/NZu2K39fYmkAAAAC/the-office.gif" alt="">
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button color="warn" [mat-dialog-close]="data" cdkFocusInitial>
+    Modificar
+  </button>
+</div>

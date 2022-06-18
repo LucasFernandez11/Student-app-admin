@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* html, body { height: 100%; } */
+
+ body { 
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  height: 100%;
+  /* background-image: url('https://img.freepik.com/foto-gratis/fondo-pared-ladrillo-textura-negro_53876-63583.jpg');  */
+  /* background-image: url('https://i.pinimg.com/originals/20/48/b7/2048b7e14f93bd7800dabf47ce874ccd.jpg'); */
+  background-image: url('https://p4.wallpaperbetter.com/wallpaper/788/83/752/arcade-video-games-digital-1980s-1990s-hd-wallpaper-preview.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* html {
+  background-color: blueviolet;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+} */
+
+.full-width {
+  width: 100%;
+}
+.full-width-min {
+  min-width: 100%;
+}
+.full-height {
+  height: 100%;
+}

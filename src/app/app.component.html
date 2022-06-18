@@ -1,0 +1,7 @@
+
+<div class="bg" *ngIf="authService.isAuthenticated | async; else noConnect">
+  <app-dashboard></app-dashboard>
+</div>
+<ng-template class="bg" #noConnect>
+  <router-outlet></router-outlet>
+</ng-template>

@@ -1,0 +1,66 @@
+<mat-toolbar class="nav-superior">
+  <a routerLink="erorrPage">
+    <img class="logo" src="https://user-images.githubusercontent.com/48678280/88862734-4903af80-d201-11ea-968b-9c939d88a37c.gif" alt="logo">
+</a>
+  <div align="end">Bienvenido {{ usuarioActivo.usuario }}</div>
+  <div class="example-spacer"></div>
+  <h1 class="neon">AppAlumnos</h1>
+  <div class="example-spacer"></div>
+  <button mat-button class="menu-botton " (click)="cerrarSesion()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Cerrar Sesión</span>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container fxFlexFill>
+  <mat-sidenav #sidenav fxLayout="column" closed="true">
+    <div
+      fxLayout="column"
+      *ngIf="authService.isAuthenticated | async; else noConnect"
+    >
+      <button mat-button class="menu-button neon" routerLink="/alumnos">
+        <mat-icon>account_circle</mat-icon>
+        <span>Alumnos</span>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button neon" routerLink="/cursos">
+        <mat-icon>bookmark</mat-icon>
+        <span>Cursos</span>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button neon" routerLink="/inscripciones">
+        <mat-icon>library_books</mat-icon>
+        <span>Inscripciones</span>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      <button
+        *ngIf="authService.isAdmin"
+        mat-button
+        class="menu-button neon"
+        routerLink="/usuarios"
+      >
+        <mat-icon>video_label</mat-icon>
+        <span>Usuarios</span>
+      </button>
+      <div *ngIf="authService.isAdmin">
+        <mat-divider></mat-divider>
+      </div>      
+    </div>
+
+    <ng-template #noConnect>
+      <h3>Iniciar sesión para usar la app</h3>
+    </ng-template>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,127 @@
+<h1 mat-dialog-title>Ver Alumno</h1>
+<h3 mat-dialog-title>ID Alumno: {{ data.idAlumno }}</h3>
+<h3 mat-dialog-subtitle>Alumno: {{ data | unirnombreapellido }}</h3>
+<div class="d-flex justify-content-center">
+  <img width="200" height="100" src="https://media3.giphy.com/media/cXblnKXr2BQOaYnTni/giphy.gif" alt="">
+</div>
+<div mat-dialog-content align="center">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Nombre"
+      [(ngModel)]="data.nombres"
+      name="nombres"
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Apellido"
+      [(ngModel)]="data.apellidos"
+      name="apellidos"
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Email"
+      [(ngModel)]="data.email"
+      name="email"
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>DNI</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="DNI"
+      [(ngModel)]="data.dni"
+      name="dni"
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Domicilio</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Domicilio"
+      [(ngModel)]="data.domicilio"
+      name="domicilio"
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Telefono</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Telefono"
+      [(ngModel)]="data.telefono"
+      name="telefono"
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+</div>
+
+<h1 mat-dialog-title>Tabla Cursos inscriptos</h1>
+
+<table
+  mat-table
+  [dataSource]="datosFiltrados$"
+  class="mat-elevation-z8 full-width-min"
+>
+  <ng-container matColumnDef="idCurso">
+    <th mat-header-cell *matHeaderCellDef>Nombre Curso</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.idCurso | convertirIdNombreCurso | async }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+
+    <mat-cell *matCellDef="let element">
+      <button
+        *ngIf="authService.isAdmin"
+        mat-icon-button
+        aria-label="Icono Eliminar"
+        type="button"
+        mat-raised-button
+        color="accent"
+        matTooltip="Eliminar"
+        (click)="desinscribirCurso(element.idAlumno, element.idCurso)"
+      >
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Volver atrás</button>
+</div>

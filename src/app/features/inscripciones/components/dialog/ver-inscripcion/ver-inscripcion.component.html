@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>Ver Inscripcion</h1>
+<h3 mat-dialog-title>ID Inscripcion: {{ data.idInscripcion }}</h3>
+<div class="d-flex justify-content-center">
+  <img width="200" height="100" src="https://media3.giphy.com/media/cXblnKXr2BQOaYnTni/giphy.gif" alt="">
+</div>
+<div mat-dialog-content align="center">
+  <mat-form-field appearance="fill">
+    <mat-label>Id Alumno</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="ID Alumno"
+      [(ngModel)]="data.idAlumno"
+      name="clase"
+      required
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Id Curso</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="ID Curso"
+      [(ngModel)]="data.idCurso"
+      name="clase"
+      required
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Volver atrás</button>
+</div>

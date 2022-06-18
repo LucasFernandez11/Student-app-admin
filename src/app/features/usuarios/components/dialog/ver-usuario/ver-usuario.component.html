@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>Ver Usuario</h1>
+<h3 mat-dialog-title>ID Usuario: {{ data.idUsuario }}</h3>
+<div class="d-flex justify-content-center">
+  <img width="200" height="100" src="https://media3.giphy.com/media/cXblnKXr2BQOaYnTni/giphy.gif" alt="">
+</div>
+<div mat-dialog-content align="center">
+  <mat-form-field appearance="fill">
+    <mat-label>Usuario</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Usuario"
+      [(ngModel)]="data.usuario"
+      name="usuario"
+      required
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Contraseña</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Contraseña"
+      [(ngModel)]="data.contrasena"
+      name="contrasena"
+      required
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Rol</mat-label>
+    <input
+      matInput
+      #input
+      class="form-control"
+      placeholder="Rol"
+      [(ngModel)]="data.rol"
+      name="rol"
+      required
+      disabled
+    />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Volver atrás</button>
+</div>

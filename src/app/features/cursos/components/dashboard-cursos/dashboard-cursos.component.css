@@ -1,0 +1,29 @@
+table {
+  background-color: rgba(23, 226, 145, 0.107);
+  width: 100%;
+}
+
+.bg-sombra {
+  /* border: 2px black solid; */
+  box-shadow: 30px 30px 30px rgba(23, 226, 145, 0.928);
+}
+.titulo{
+  border-radius: 15px;
+  background-color:rgba(23, 226, 145, 0.928);
+
+}
+
+
+
+mat-header-cell,
+mat-cell {
+  justify-content: center;
+}
+
+td,
+th {
+
+  color: aliceblue;
+  text-align: center !important;
+  vertical-align: middle !important;
+}

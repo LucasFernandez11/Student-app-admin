@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Editar Inscripción</h1>
+<h3 mat-dialog-title>ID Inscripcion: {{ data.idInscripcion }}</h3>
+<!-- <h3 mat-dialog-subtitle>Alumno: {{ data }}</h3> -->
+<div mat-dialog-content align="center">
+  <mat-form-field appearance="fill" class="mx-4">
+    <mat-label>Id Alumno</mat-label>
+    <input matInput #input class="form-control" placeholder="ID Alumno" [(ngModel)]="data.idAlumno" name="clase"
+      required />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Id Curso</mat-label>
+    <input matInput #input class="form-control" placeholder="ID Curso" [(ngModel)]="data.idCurso" name="clase"
+      required />
+    <mat-error *ngIf="formControl.invalid">{{ getError() }}</mat-error>
+  </mat-form-field>
+</div>
+<div class="d-flex justify-content-center">
+  <img width="200" height="100" src="https://c.tenor.com/NZu2K39fYmkAAAAC/the-office.gif" alt="">
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button color="warn" mat-button [mat-dialog-close]="data" cdkFocusInitial>
+    Modificar
+  </button>
+</div>

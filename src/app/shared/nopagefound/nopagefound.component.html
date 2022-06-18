@@ -1,0 +1,27 @@
+<body>
+  <div class="container">
+    <div class="inner">
+      <div class="grid">
+        <div class="cell text-white neon" id="write">
+          <h2 class="fs-3"><b>404.</b> Esto es un error.</h2>
+          <h3 class="fs-4">La URL requerida no funciona en este servidor.</h3>
+          
+          <div>
+            <button
+              *ngIf="!sesionActiva"
+              mat-button
+              class="menu-botton"
+              (click)="iraLogin()"
+            >
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Volver a Login</span>
+            </button>
+          </div>
+        </div>
+        <div class="cell">
+          <img src="https://i.imgur.com/tMJkbbq.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
