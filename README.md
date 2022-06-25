@@ -1,27 +1,32 @@
 # Proyecto Final Angular Fernandez Lucas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+## Heramientas
 
-## Development server
+Este proyecto fue desarrollado en angular version 13.2.6, generado con angular CLI.
+Se utilizo Angular Material, Bootstrap 5, RxJS,  ngrx (store, state, effects, actions, reducers, selectors).
+Datos brindados desde Mockapi.
+Estilos en CSS.
+Pruebas Unitarias con Karma y Jasmine, facilitadas por Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Objetico de la APP
 
-## Code scaffolding
+El Objetivo de esta aplicacion es realizar la administracion de estudiantes.
+Se puede ingresar con roles, donde el admin puede crear, modificar y eliminar otros usuarios, estudiantes
+cursos y hasta realizar inscripciones de alumnos a cursos.
+Ingreesando como estudiante, puede ver los cursos, la informacion de los demas estudiantes y de las inscripciones.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## CoderHouse
+Esta app es el desafio planteado en la cursada de Angular en Coderhouse.
+Fue desarrollada implementando la informacion brindada en las clases semanales y clases complementarias
+Para conformar este proyecto final, se fueron incorporando herramientas de desafios semanales
+trabajando tanto individualmente como asi tambien con el apoyo de compañeros y tutores.
 
-## Build
+## Agredicimientos
+Por mas que este proyecto sea un trabajo individual
+Doy gracias a mis compañeros de la Comisión 29490 de Angular que me apoyaron durante este proceso de aprendizaje,
+trabajando durante horas y dias compartiendo conocimientos, errores, y dudas.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Recordemos siempre que en la programacion saber trabjar en equipo y tener su apoyo es una de las aptitudes mas valoradas.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Lucas Hess  https://www.linkedin.com/in/lucas-axel-h-37362b116/
+Lucia Massi  https://www.linkedin.com/in/lucia-masi/
