@@ -27,18 +27,7 @@ export class NavbarComponent implements OnInit {
     public authService: AuthService,
     private router: Router,
     private store: Store
-  ) {
-    /*  var values = JSON.parse(localStorage.getItem('session') || 'false');
-    if (values.usuario !== undefined) {
-      if (values.usuario.rol === 1) {
-        this.rol = true;
-      } else {
-        this.rol = false;
-      }
-    } else {
-      this.rol = false;
-    } */
-  }
+  ) { }
 
   ngOnInit(): void {
     var values = JSON.parse(localStorage.getItem('session') || 'false');

@@ -50,7 +50,6 @@ describe('DashboardUsuariosComponent', () => {
   it('El titulo de usuarios se renderiza correctamente en la vista', () => {
     const fixture = TestBed.createComponent(DashboardUsuariosComponent);
     const vista = fixture.nativeElement as HTMLElement;
-
     fixture.detectChanges();
 
     expect(vista.querySelector('.container')?.textContent).toContain(

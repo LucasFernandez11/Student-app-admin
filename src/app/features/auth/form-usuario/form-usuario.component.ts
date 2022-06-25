@@ -1,3 +1,4 @@
+import { cargarUsuarios } from './../../usuarios/state/usuarios.actions';
 import { Component } from '@angular/core';
 import {
   FormBuilder,
@@ -8,7 +9,6 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { UsuariosService } from 'src/app/core/services/usuarios.service';
-import { cargarUsuarios } from '../../state/usuarios.actions';
 
 @Component({
   selector: 'app-form-usuario',

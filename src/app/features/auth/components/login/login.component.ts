@@ -19,10 +19,10 @@ import { cargarSesion, loginAction } from '../../state/auth.actions';
 })
 export class LoginComponent {
   formLogin!: FormGroup;
-
   isLoginFailed = false;
   roles: string[] = [];
   errorMessage = '';
+  
 
   constructor(
     public fb: FormBuilder,
@@ -40,9 +40,7 @@ export class LoginComponent {
     event.preventDefault();
     const usuario = this.formLogin.value.usuario;
     const contrasena = this.formLogin.value.contrasena;
-    this.authService
-      .IniciarSesion(usuario, contrasena)
-      .subscribe((data: Usuario) => {
+    this.authService.IniciarSesion(usuario, contrasena).subscribe((data: Usuario) => {
         if (data) {
           this.store.dispatch(cargarSesion({ data }));
 
@@ -58,5 +56,9 @@ export class LoginComponent {
     this.store.dispatch(
       loginAction({ usuario: usuario, contrasena: contrasena })
     );
+  }
+
+  crearUsuarioNuevo() {
+    this.ruta.navigate(['/usuarios']);
   }
 }

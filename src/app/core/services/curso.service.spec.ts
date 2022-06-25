@@ -28,7 +28,7 @@ describe('CursoService', () => {
     (httpMock: HttpTestingController, cursosService: CursosService) => {
       const mockCurso: Curso[] = [
         {
-          idCurso: 213,
+          idCurso: '213',
           curso: 'Vuejs',
           descripcion: 'Curso de Vuejs',
           horas: '25',
@@ -36,7 +36,7 @@ describe('CursoService', () => {
       ];
       const datosModificarCurso: Curso[] = [
         {
-          idCurso: 214,
+          idCurso: '214',
           curso: 'Angular',
           descripcion: 'Curso de Angular',
           horas: '21',
@@ -62,7 +62,7 @@ describe('CursoService', () => {
     (httpMock: HttpTestingController, cursosService: CursosService) => {
       const mockCurso: Curso[] = [
         {
-          idCurso: 213,
+          idCurso: "213",
           curso: 'Angular',
           descripcion: 'Curso de Angular',
           horas: '40',
@@ -70,7 +70,7 @@ describe('CursoService', () => {
       ];
       const datosAgregarCurso: Curso[] = [
         {
-          idCurso: 300,
+          idCurso: "300",
           curso: 'React',
           descripcion: 'Curso de React',
           horas: '30',

@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Editar Inscripción</h1>
 <h3 mat-dialog-title>ID Inscripcion: {{ data.idInscripcion }}</h3>
-<!-- <h3 mat-dialog-subtitle>Alumno: {{ data }}</h3> -->
+<!-- <h3 mat-dialog-subtitle>Alumno: {{ data.idAlumno | convertirIdNombreAlumno | async}}</h3> -->
 <div mat-dialog-content align="center">
   <mat-form-field appearance="fill" class="mx-4">
     <mat-label>Id Alumno</mat-label>

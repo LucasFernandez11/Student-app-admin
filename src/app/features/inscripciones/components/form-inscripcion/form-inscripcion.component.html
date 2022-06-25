@@ -12,7 +12,6 @@
         <mat-select class="text-white" formControlName="idAlumno">
           <mat-option  *ngFor="let alumno of datosAlumnos$ | async" [value]="alumno.idAlumno">            
             {{ alumno.nombres }}
-           
           </mat-option>
         </mat-select>
 

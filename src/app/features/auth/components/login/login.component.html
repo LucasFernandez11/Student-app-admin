@@ -1,40 +1,26 @@
+
 <div class="container">
   <mat-card class="mx-auto card-login mt-5 d-flex align-center justify-content-center">
     <mat-card-content>
-      <form  class="fs-5 text-white" [formGroup]="formLogin" (ngSubmit)="onEnviar($event)">
+      <form class="fs-5 text-white" [formGroup]="formLogin" (ngSubmit)="onEnviar($event)">
         <p>Iniciar Sesión</p>
         <mat-form-field class="full-width-input text-white">
           <mat-label class="text-white">Usuario</mat-label>
-          <input          
-            matInput            
-            formControlName="usuario"
-            required
-          />
+          <input matInput formControlName="usuario" required />
           <mat-error>
-            <span *ngIf="formLogin.get('usuario')?.invalid" class="error"
-              >El Nombre de Usuario es requerido
+            <span *ngIf="formLogin.get('usuario')?.invalid" class="error">El Nombre de Usuario es requerido
             </span>
           </mat-error>
         </mat-form-field>
         <mat-form-field class="full-width-input text-white ">
           <mat-label class="text-white">Contraseña</mat-label>
-          <input
-            matInput
-            type="password"            
-            formControlName="contrasena"
-            required
-          />
+          <input matInput type="password" formControlName="contrasena" required />
           <mat-error>
-            <span *ngIf="formLogin.get('contrasena')?.invalid" class="error"
-              >La contraseña es requerida
+            <span *ngIf="formLogin.get('contrasena')?.invalid" class="error">La contraseña es requerida
             </span>
           </mat-error>
         </mat-form-field>
-        <button
-          mat-raised-button
-          [disabled]="formLogin.invalid"
-          color="primary"
-        >
+        <button mat-raised-button [disabled]="formLogin.invalid" color="primary">
           Login
         </button>
       </form>
@@ -44,11 +30,15 @@
         <h3>Usuario: admin</h3>
         <h3>Contraseña: 123456</h3>
       </div>
-      <div class="text-white" >
+      <div class="text-white">
         <h2>Usuario Alumno</h2>
         <h3>Usuario: user</h3>
         <h3>Contraseña: 123456</h3>
       </div>
+      <button class="mx-3" mat-raised-button  (click)="crearUsuarioNuevo()"  color="primary">
+        Crear Usuario
+      </button>
     </mat-card-content>
   </mat-card>
 </div>
+
