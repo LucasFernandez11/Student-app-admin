@@ -14,11 +14,10 @@ import { AuthEffects } from './state/auth.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
 
 @NgModule({
   declarations: [LoginComponent,
-    FormUsuarioComponent,],
+    ],
   imports: [
     UsuariosRoutingModule,
     AppMaterialModule,
