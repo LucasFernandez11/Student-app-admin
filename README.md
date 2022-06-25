@@ -8,7 +8,7 @@ Datos brindados desde Mockapi.
 Estilos en CSS.
 Pruebas Unitarias con Karma y Jasmine, facilitadas por Angular.
 
-## Objetico de la APP
+## Objetivo de la APP
 
 El Objetivo de esta aplicacion es realizar la administracion de estudiantes.
 Se puede ingresar con roles, donde el admin puede crear, modificar y eliminar otros usuarios, estudiantes
