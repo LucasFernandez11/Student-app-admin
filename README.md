@@ -30,20 +30,3 @@ Recordemos siempre que en la programacion saber trabjar en equipo y tener su apo
 
 Lucas Hess  https://www.linkedin.com/in/lucas-axel-h-37362b116/
 Lucia Massi  https://www.linkedin.com/in/lucia-masi/
-
-
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-
-
-
-
-
-
-
-
-
-
