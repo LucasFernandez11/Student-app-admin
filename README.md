@@ -21,7 +21,7 @@ Fue desarrollada implementando la informacion brindada en las clases semanales y
 Para conformar este proyecto final, se fueron incorporando herramientas de desafios semanales
 trabajando tanto individualmente como asi tambien con el apoyo de compañeros y tutores.
 
-## Agredicimientos
+## Agredecimientos
 Por mas que este proyecto sea un trabajo individual
 Doy gracias a mis compañeros de la Comisión 29490 de Angular que me apoyaron durante este proceso de aprendizaje,
 trabajando durante horas y dias compartiendo conocimientos, errores, y dudas.
@@ -29,4 +29,4 @@ trabajando durante horas y dias compartiendo conocimientos, errores, y dudas.
 Recordemos siempre que en la programacion saber trabjar en equipo y tener su apoyo es una de las aptitudes mas valoradas.
 
 Lucas Hess  https://www.linkedin.com/in/lucas-axel-h-37362b116/
-Lucia Massi  https://www.linkedin.com/in/lucia-masi/
+Lucia Masi  https://www.linkedin.com/in/lucia-masi/
